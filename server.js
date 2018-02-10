@@ -1,4 +1,5 @@
 const MAINTENANCE_MODE = false;
+const PORT = process.env.PORT || 3000;
 
 const express = require('express');
 const hbs = require('hbs');
@@ -48,4 +49,6 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.listen(3000);
+app.listen(PORT, () => {
+    console.log(`Node server is up on port ${PORT}`);
+});
